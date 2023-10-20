@@ -1,65 +1,38 @@
-<form>
-  <label for="name">Name:</label>
-  <input type="text" id="name" name="name"><br>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Patient Form</title>
+</head>
+<body>
+    <h2>Patient Information</h2>
+    <form id="patientForm">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name"><br>
+        <label for="age">Age:</label><br>
+        <input type="number" id="age" name="age"><br>
+        <!-- Add more fields as needed -->
 
-  <label for="age">Age:</label>
-  <input type="number" id="age" name="age"><br>
+        <h2>Medical Information</h2>
+        <label for="previousDisease">Previous Disease:</label><br>
+        <input type="text" id="previousDisease" name="previousDisease"><br>
+        <!-- Add more fields as needed -->
 
-  <label for="birthdate">Birth Date:</label>
-  <input type="date" id="birthdate" name="birthdate"><br>
+        <h2>Reason for Consultation</h2>
+        <label for="reason">Reason:</label><br>
+        <textarea id="reason" name="reason" rows="4" cols="50"></textarea><br>
 
-  <label for="document">Document Number:</label>
-  <input type="text" id="document" name="document"><br>
+        <h2>Save Data</h2>
+        <button onclick="saveForm()">Save</button>
+    </form>
 
-  <label for="email">Email:</label>
-  <input type="email" id="email" name="email"><br>
+    <script>
+        function saveForm() {
+            const formData = new FormData(document.getElementById('patientForm'));
+            const patientName = formData.get('name');
+            // Add code to save the form data to the cloud or locally
 
-  <label for="phone">Phone:</label>
-  <input type="tel" id="phone" name="phone"><br>
-
-  <label for="address">Address:</label>
-  <input type="text" id="address" name="address"><br>
-
-  <label for="number">Number:</label>
-  <input type="text" id="number" name="number"><br>
-
-  <label for="complement">Complement:</label>
-  <input type="text" id="complement" name="complement"><br>
-
-  <label for="city">City:</label>
-  <input type="text" id="city" name="city"><br>
-
-  <label for="state">State:</label>
-  <input type="text" id="state" name="state"><br>
-
-  <label for="country">Country:</label>
-  <input type="text" id="country" name="country"><br>
-
-  <label for="disease">Previous Disease:</label>
-  <input type="checkbox" id="disease" name="disease" value="yes">
-  <input type="text" id="disease-info" name="disease-info"><br>
-
-  <label for="treatment">Treatment:</label>
-  <input type="checkbox" id="treatment" name="treatment" value="yes">
-  <input type="text" id="treatment-info" name="treatment-info"><br>
-
-  <label for="allergies">Allergies:</label>
-  <input type="checkbox" id="allergies" name="allergies" value="yes">
-  <input type="text" id="allergies-info" name="allergies-info"><br>
-
-  <label for="comorbidities">Comorbidities:</label>
-  <input type="checkbox" id="comorbidities" name="comorbidities" value="yes">
-  <input type="text" id="comorbidities-info" name="comorbidities-info"><br>
-
-  <label for="treatment-before">Treatment Before:</label>
-  <input type="checkbox" id="treatment-before" name="treatment-before" value="yes">
-  <input type="text" id="treatment-before-info" name="treatment-before-info"><br>
-
-  <label for="reason">Main Reason of Consultation:</label>
-  <input type="text" id="reason" name="reason"><br>
-
-  <label for="duration">Duration of the Problem:</label>
-  <input type="text" id="duration" name="duration"><br>
-
-  <input type="submit" value="Submit">
-</form>
+            alert('Form saved for ' + patientName);
+        }
+    </script>
+</body>
+</html>
