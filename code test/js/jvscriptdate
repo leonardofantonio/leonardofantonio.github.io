@@ -1,3 +1,0 @@
-const currentDate = new Date();
-const dateTime = currentDate.toLocaleString();
-document.getElementById("datetime").innerHTML = dateTime;
